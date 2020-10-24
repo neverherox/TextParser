@@ -1,8 +1,11 @@
 import entity.Sentence;
 import entity.Text;
+import entity.Word;
 import service.SentenceService;
 import service.TextService;
 import service.WordService;
+
+import java.util.List;
 
 public class main {
     public static void main(String[] args) {

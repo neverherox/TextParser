@@ -2,6 +2,8 @@ package entity;
 
 import enums.SentenceType;
 
+import java.util.List;
+
 //composite
 public class Sentence extends CompositeTextPart<Word> {
     private SentenceType type;
@@ -24,12 +26,13 @@ public class Sentence extends CompositeTextPart<Word> {
     }
 
     @Override
-    public void parse(String content) {
+    public List<Word> parse(String content) {
         String[] words = content.split("\\s+");
         for (String word : words) {
             Word wordEntity = new Word();
             this.getParts().add(wordEntity);
             wordEntity.parse(word);
         }
+        return parts;
     }
 }

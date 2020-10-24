@@ -15,12 +15,13 @@ public class Text extends CompositeTextPart<Paragraph> {
     }
 
     @Override
-    public void parse(String content) {
+    public List<Paragraph> parse(String content) {
         String[] paragraphs = content.split("\n");
         for (String paragraph : paragraphs) {
             Paragraph paragraphEntity = new Paragraph();
             this.parts.add(paragraphEntity);
             paragraphEntity.parse(paragraph);
         }
+        return parts;
     }
 }

@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 public class Word extends CompositeTextPart<Symbol> {
     @Override
     public String toString() {
@@ -11,13 +13,14 @@ public class Word extends CompositeTextPart<Symbol> {
     }
 
     @Override
-    public void parse(String content) {
+    public List<Symbol> parse(String content) {
         char[] symbols = content.toCharArray();
         for (char symbol : symbols) {
             Symbol symbolEntity = new Symbol();
             symbolEntity.setSymbol(symbol);
             this.getParts().add(symbolEntity);
         }
+        return parts;
     }
 
     @Override

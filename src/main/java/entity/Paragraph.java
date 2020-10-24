@@ -1,5 +1,7 @@
 package entity;
 
+import java.util.List;
+
 //composite
 public class Paragraph extends CompositeTextPart<Sentence> {
     @Override
@@ -13,7 +15,7 @@ public class Paragraph extends CompositeTextPart<Sentence> {
     }
 
     @Override
-    public void parse(String content) {
+    public List<Sentence> parse(String content) {
         String[] sentences = content.split("[\\.|\\!|\\?]\\s+");
         for (String sentence : sentences) {
             int punctuationIndex = content.indexOf(sentence) + sentence.length();
@@ -22,5 +24,6 @@ public class Paragraph extends CompositeTextPart<Sentence> {
             this.getParts().add(sentenceEntity);
             sentenceEntity.parse(sentence);
         }
+        return parts;
     }
 }
