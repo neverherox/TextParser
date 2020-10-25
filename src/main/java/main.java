@@ -11,11 +11,8 @@ public class main {
         TextService textService = new TextService();
         WordService wordService = new WordService();
 
-        Text text = new Text();
-        Text textFromFile = new Text();
-
-        text.parse("Hello, my name is Kirill. I`m from Belarus, Grodno! \n");
-        textFromFile.parse(fileReader.read());
+        Text text = new Text().parse("Hello, my name is Kirill. I`m from Belarus, Grodno! \n");;
+        Text textFromFile = new Text().parse(fileReader.read());;
 
         sentenceService.determineAllSentencesType(text);
         sentenceService.determineAllSentencesType(textFromFile);
