@@ -1,8 +1,14 @@
 package entity;
 
 
+import file.FileReader;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 //composite
 public class Text extends CompositeTextPart<Paragraph> {
+    private static final Logger logger = LogManager.getLogger(FileReader.class);
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
@@ -14,6 +20,7 @@ public class Text extends CompositeTextPart<Paragraph> {
 
     @Override
     public Text parse(String content) {
+        logger.info("text parsing");
         String[] paragraphs = content.split("\n");
         for (String paragraph : paragraphs) {
             Paragraph paragraphEntity = new Paragraph();

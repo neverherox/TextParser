@@ -1,7 +1,13 @@
 package entity;
 
 
+import file.FileReader;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 public class Word extends CompositeTextPart<Symbol> {
+    private static final Logger logger = LogManager.getLogger(FileReader.class);
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
@@ -13,6 +19,7 @@ public class Word extends CompositeTextPart<Symbol> {
 
     @Override
     public Word parse(String content) {
+        logger.info("word parsing");
         char[] symbols = content.toCharArray();
         for (char symbol : symbols) {
             Symbol symbolEntity = new Symbol();

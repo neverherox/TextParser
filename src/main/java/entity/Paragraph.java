@@ -1,9 +1,15 @@
 package entity;
 
+import file.FileReader;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+
 import java.util.List;
 
 //composite
 public class Paragraph extends CompositeTextPart<Sentence> {
+    private static final Logger logger = LogManager.getLogger(FileReader.class);
+
     @Override
     public String toString() {
         StringBuilder result = new StringBuilder();
@@ -16,6 +22,7 @@ public class Paragraph extends CompositeTextPart<Sentence> {
 
     @Override
     public Paragraph parse(String content) {
+        logger.info("paragraph parsing");
         String[] sentences = content.split("[\\.|\\!|\\?]\\s+");
         for (String sentence : sentences) {
             int punctuationIndex = content.indexOf(sentence) + sentence.length();

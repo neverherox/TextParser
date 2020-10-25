@@ -1,9 +1,12 @@
 package file;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
 
 public class FileReader {
+    private static final Logger logger = LogManager.getLogger(FileReader.class);
     private File file = new File ("text.txt");
 
     public File getFile() {
@@ -16,6 +19,7 @@ public class FileReader {
 
     public String read()
     {
+        logger.info("reading text");
         StringBuilder text = new StringBuilder();
         try(java.io.FileReader reader = new java.io.FileReader(file))
         {
@@ -26,8 +30,7 @@ public class FileReader {
             }
         }
         catch(IOException ex){
-
-            System.out.println(ex.getMessage());
+            logger.error(ex);
         }
         return text.toString();
     }

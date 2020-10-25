@@ -1,10 +1,14 @@
 package entity;
 
 import enums.SentenceType;
+import file.FileReader;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 
 
 //composite
 public class Sentence extends CompositeTextPart<Word> {
+    private static final Logger logger = LogManager.getLogger(FileReader.class);
     private SentenceType type;
 
     public SentenceType getType() {
@@ -26,6 +30,7 @@ public class Sentence extends CompositeTextPart<Word> {
 
     @Override
     public Sentence parse(String content) {
+        logger.info("sentence parsing");
         String[] words = content.split("\\s+");
         for (String word : words) {
             Word wordEntity = new Word();
