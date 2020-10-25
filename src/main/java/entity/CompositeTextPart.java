@@ -14,6 +14,6 @@ public abstract class CompositeTextPart<T extends TextPart> implements TextPart 
         this.parts = parts;
     }
 
-    public abstract List<T> parse(String content);
+    public abstract TextPart parse(String content);
 
 }

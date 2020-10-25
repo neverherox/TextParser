@@ -1,7 +1,5 @@
 package entity;
 
-import java.util.ArrayList;
-import java.util.List;
 
 //composite
 public class Text extends CompositeTextPart<Paragraph> {
@@ -15,13 +13,25 @@ public class Text extends CompositeTextPart<Paragraph> {
     }
 
     @Override
-    public List<Paragraph> parse(String content) {
+    public Text parse(String content) {
         String[] paragraphs = content.split("\n");
         for (String paragraph : paragraphs) {
             Paragraph paragraphEntity = new Paragraph();
             this.parts.add(paragraphEntity);
             paragraphEntity.parse(paragraph);
         }
-        return parts;
+        return this;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj instanceof  Text){
+            Text t = (Text)obj;
+            if(this.parts.equals(t.parts))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
