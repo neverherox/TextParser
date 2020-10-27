@@ -15,5 +15,4 @@ public abstract class CompositeTextPart<T extends TextPart> implements TextPart 
     }
 
     public abstract TextPart parse(String content);
-
 }

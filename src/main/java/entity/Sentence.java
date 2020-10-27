@@ -8,7 +8,7 @@ import org.apache.log4j.Logger;
 
 //composite
 public class Sentence extends CompositeTextPart<Word> {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(Sentence.class);
     private SentenceType type;
 
     public SentenceType getType() {

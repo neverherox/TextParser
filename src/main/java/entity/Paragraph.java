@@ -8,7 +8,7 @@ import java.util.List;
 
 //composite
 public class Paragraph extends CompositeTextPart<Sentence> {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(Paragraph.class);
 
     @Override
     public String toString() {

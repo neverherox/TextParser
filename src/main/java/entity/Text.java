@@ -7,7 +7,7 @@ import org.apache.log4j.Logger;
 
 //composite
 public class Text extends CompositeTextPart<Paragraph> {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(Text.class);
 
     @Override
     public String toString() {

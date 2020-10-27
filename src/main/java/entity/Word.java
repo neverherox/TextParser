@@ -6,7 +6,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 public class Word extends CompositeTextPart<Symbol> {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(Word.class);
 
     @Override
     public String toString() {

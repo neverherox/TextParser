@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WordService {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(WordService.class);
 
     public Word findUniqWord(Text text) {
         logger.info("finding uniq word");

@@ -7,7 +7,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 public class SentenceService {
-    private static final Logger logger = LogManager.getLogger(FileReader.class);
+    private static final Logger logger = LogManager.getLogger(SentenceService.class);
 
     public SentenceType determineSentenceType(Sentence sentence) {
         logger.info("determining sentence type");
